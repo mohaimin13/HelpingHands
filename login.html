@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HelpingHands - Login</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- Left Side -->
+        <div class="login-left">
+
+            <div class="brand">
+                <h1>HelpingHands</h1>
+            </div>
+
+            <div class="welcome-text">
+                <p>
+                    Together We Rise, Together We Care,
+                    Together We Build a Better Tomorrow.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- Right Side -->
+        <div class="login-right">
+
+            <div class="login-box">
+
+                <h2>Welcome Back!</h2>
+
+                <p class="login-subtitle">
+                    Login to your HelpingHands account
+                </p>
+
+                <form id="loginForm" novalidate>
+
+                    <!-- Error Message -->
+                    <p id="loginError" class="login-error"></p>
+
+                    <!-- Email -->
+                    <div class="input-group">
+
+                        <label for="email">
+                            <span class="field-icon">✉</span>
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                        >
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="input-group">
+
+                        <label for="password">
+                            <span class="field-icon">🔒</span>
+                            Password
+                        </label>
+
+                        <div class="password-box">
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Remember & Forgot -->
+                    <div class="login-options">
+
+                        <label class="remember-me">
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                            >
+
+                            Remember me
+
+                        </label>
+
+                        <a href="#" id="forgotPassword">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- Login Button -->
+                    <button type="submit" class="login-btn">
+
+                        <span class="login-icon">➜</span>
+                        Login
+
+                    </button>
+
+                </form>
+
+
+                <!-- Register -->
+                <p class="register-text">
+
+                    Don't have an account?
+
+                    <a href="register.html">
+                        Create an account
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Custom Message Modal -->
+    <div class="message-overlay" id="messageModal">
+
+        <div class="message-box">
+
+            <div class="message-icon" id="messageIcon"></div>
+
+            <h2 id="messageTitle">Message</h2>
+
+            <p id="messageText"></p>
+
+            <!-- Forgot Password Form -->
+            <div id="resetPasswordForm" class="reset-password-form">
+
+                <div class="modal-input-group">
+                    <label for="resetEmail">Registered Email</label>
+                    <input
+                        type="email"
+                        id="resetEmail"
+                        placeholder="Enter your registered email"
+                    >
+                </div>
+
+                <div class="modal-input-group">
+                    <label for="newPassword">New Password</label>
+                    <input
+                        type="password"
+                        id="newPassword"
+                        placeholder="Enter new password"
+                    >
+                </div>
+
+                <div class="modal-input-group">
+                    <label for="confirmNewPassword">Confirm Password</label>
+                    <input
+                        type="password"
+                        id="confirmNewPassword"
+                        placeholder="Confirm new password"
+                    >
+                </div>
+
+                <p id="resetError" class="reset-error"></p>
+
+            </div>
+
+            <div class="message-actions" id="messageActions">
+
+                <button type="button" id="messageOkBtn">
+                    OK
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="login.js"></script>
+
+</body>
+</html>

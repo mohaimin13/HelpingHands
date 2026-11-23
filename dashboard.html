@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - HelpingHands</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <h2>HelpingHands</h2>
+
+            <nav>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="volunteers.html" class="management-link">Volunteers</a>
+                <a href="donations.html" class="management-link">Donations</a>
+                <a href="campaigns.html" class="management-link">Campaigns</a>
+                <a href="distribution.html" class="management-link">Distribution</a>
+                <a href="reports.html" class="management-link">Reports</a>
+            </nav>
+
+            <button id="logoutBtn" class="logout-btn">
+                Logout
+            </button>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="topbar">
+
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Welcome back to HelpingHands!</p>
+                </div>
+
+                <div class="user-info">
+                    <span id="userName">User</span>
+                    <span id="userRole"></span>
+                </div>
+
+            </header>
+
+
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+
+                <h2>Welcome, <span id="welcomeName">User</span>!</h2>
+
+                <p id="welcomeMessage">
+                    Welcome to HelpingHands.
+                </p>
+
+            </section>
+
+
+            <!-- Statistics Cards -->
+            <section class="stats-container" id="adminStats">
+
+                <div class="stat-card">
+                    <h3>Total Volunteers</h3>
+                    <p id="totalVolunteers">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Total Donations</h3>
+                    <p id="totalDonations">৳0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Active Campaigns</h3>
+                    <p id="activeCampaigns">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Distributions</h3>
+                    <p id="totalDistributions">0</p>
+                </div>
+
+            </section>
+
+
+            <!-- User Donation Section -->
+            <section id="userSection" style="display: none;">
+
+                <div class="recent-activity">
+                    <h2>Make a Difference Today!</h2>
+
+                    <p>
+                        Your contribution can help people in need.
+                    </p>
+
+                    <br>
+
+                    <a href="donations.html">
+                        Go to Donations
+                    </a>
+                </div>
+
+            </section>
+
+
+            <!-- Recent Activity -->
+            <section class="recent-activity management-link">
+
+                <h2>Recent Activities</h2>
+
+                <div id="activityList">
+                    <p>No recent activities yet.</p>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

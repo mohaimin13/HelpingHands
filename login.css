@@ -322,7 +322,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* Forgot Password Form */
+
 .reset-password-form {
     display: none;
     text-align: left;
@@ -366,7 +366,7 @@ body {
 }
 
 
-/* Mobile Responsive */
+
 @media (max-width: 768px) {
 
     .login-container {

@@ -1,31 +1,31 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Get logged-in user
+   
     const currentUser = JSON.parse(
         localStorage.getItem("currentUser") ||
         sessionStorage.getItem("currentUser")
     );
 
-    // Check login status
+    
     if (!currentUser) {
         window.location.href = "login.html";
         return;
     }
 
 
-    // Get user role
+   
     const role = currentUser.role || "user";
 
 
-    // Show user information
+    
 document.getElementById("userName").textContent = currentUser.name;
 document.getElementById("welcomeName").textContent = currentUser.name;
 
 document.getElementById("userRole").style.display = "none";
 
 
-    // Dashboard elements
+   
     const adminStats = document.getElementById("adminStats");
     const userSection = document.getElementById("userSection");
     const welcomeMessage = document.getElementById("welcomeMessage");
@@ -93,7 +93,7 @@ document.getElementById("userRole").style.display = "none";
     }
 
 
-    // Get dashboard data
+    
     const volunteers =
         JSON.parse(localStorage.getItem("volunteers")) || [];
 
@@ -107,7 +107,7 @@ document.getElementById("userRole").style.display = "none";
         JSON.parse(localStorage.getItem("distributions")) || [];
 
 
-    // Update statistics for Admin and Volunteer
+    
     if (role === "admin" || role === "volunteer") {
 
         document.getElementById("totalVolunteers").textContent =

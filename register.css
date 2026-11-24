@@ -23,7 +23,7 @@ body {
     background-repeat: no-repeat;
 }
 
-/* Left Side */
+
 .register-left {
     width: 50%;
     background: transparent;
@@ -63,7 +63,7 @@ body {
 }
 
 
-/* Register Box */
+
 .register-box {
     width: 100%;
     max-width: 450px;
@@ -94,7 +94,7 @@ body {
 }
 
 
-/* Input Group */
+
 .input-group {
     margin-bottom: 18px;
 }
@@ -135,7 +135,6 @@ body {
 }
 
 
-/* Password Box */
 .password-box {
     position: relative;
 }
@@ -165,7 +164,7 @@ body {
 }
 
 
-/* Show Button */
+
 .password-box button {
     display: inline-block;
     position: absolute;
@@ -185,7 +184,7 @@ body {
 }
 
 
-/* Show Button */
+
 .password-box button {
     border: none;
     background: transparent;
@@ -204,7 +203,7 @@ body {
 }
 
 
-/* Register Button */
+
 .register-btn {
     width: 100%;
     height: 48px;
@@ -230,7 +229,7 @@ body {
 }
 
 
-/* Login Link */
+
 .login-link {
     text-align: center;
     margin-top: 20px;
@@ -251,7 +250,7 @@ body {
 }
 
 
-/* Mobile Responsive */
+
 @media (max-width: 768px) {
 
     .register-container {
@@ -286,9 +285,6 @@ body {
 }
 
 
-/* =========================
-   Custom Message Modal
-========================= */
 
 .message-overlay {
     display: none;

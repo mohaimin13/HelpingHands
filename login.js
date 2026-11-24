@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // Clear Login Error
+    
     function clearLoginError() {
 
         loginError.textContent = "";
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // Password Show / Hide
+   
     togglePassword.addEventListener("click", function () {
 
         if (passwordInput.type === "password") {
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // Login Form
+  
     loginForm.addEventListener("submit", function (event) {
 
         event.preventDefault();
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("rememberMe").checked;
 
 
-        // Empty Field Validation
+      
         if (!email || !password) {
 
             showLoginError("Please enter your email and password.");
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        // Email Validation
+        
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!emailPattern.test(email)) {
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        // Admin Login
+       
         if (
             email.toLowerCase() === "admin@gmail.com" &&
             password === "Admin@123"
@@ -173,13 +173,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        // Get Registered Users
+       
         const users = JSON.parse(
             localStorage.getItem("users")
         ) || [];
 
 
-        // Find Matching User
+       
         const user = users.find(function (user) {
 
             return user.email.toLowerCase() === email.toLowerCase() &&
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-        // User Login
+       
         if (user) {
 
             const currentUser = {
@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
             };
 
 
-            // Remember Me
+           
             if (rememberMe) {
 
                 localStorage.setItem(
@@ -238,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // Remove Error While Typing
+    
     document.getElementById("email").addEventListener("input", function () {
         clearLoginError();
     });
@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // Forgot Password
+   
     const forgotPassword =
         document.getElementById("forgotPassword");
 
@@ -288,7 +288,7 @@ document.addEventListener("DOMContentLoaded", function () {
         messageModal.classList.add("show");
 
 
-        // Cancel Button
+       
         document.getElementById("cancelResetBtn")
             .addEventListener("click", function () {
 
@@ -297,7 +297,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
 
-        // Reset Password Button
+        
         document.getElementById("resetPasswordBtn")
             .addEventListener("click", function () {
 
@@ -311,7 +311,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.getElementById("confirmNewPassword").value;
 
 
-                // Empty Field Validation
+               
                 if (!email || !newPassword || !confirmPassword) {
 
                     resetError.textContent =
@@ -323,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                // Email Validation
+               
                 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
                 if (!emailPattern.test(email)) {
@@ -337,7 +337,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                // Password Length Validation
+                
                 if (newPassword.length < 6) {
 
                     resetError.textContent =
@@ -349,7 +349,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                // Confirm Password Validation
+               
                 if (newPassword !== confirmPassword) {
 
                     resetError.textContent =
@@ -361,13 +361,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                // Get Users
+               
                 let users = JSON.parse(
                     localStorage.getItem("users")
                 ) || [];
 
 
-                // Find User
+            
                 const user = users.find(function (user) {
 
                     return user.email.toLowerCase() === email.toLowerCase();
@@ -384,7 +384,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                // Update Password
+               
                 user.password = newPassword;
 
                 localStorage.setItem(
@@ -393,7 +393,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
 
-                // Close Reset Form
+                
                 messageModal.classList.remove("show");
 
                 showMessage(
@@ -407,7 +407,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // Close Modal When Clicking Outside
+   
     messageModal.addEventListener("click", function (event) {
 
         if (event.target === messageModal) {

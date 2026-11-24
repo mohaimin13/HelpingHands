@@ -120,11 +120,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        // Get existing users
+        
         let users = JSON.parse(localStorage.getItem("users")) || [];
 
 
-        // Check existing email
+        
         const existingUser = users.find(function (user) {
             return user.email === email;
         });
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        // Create new user
+        
         const newUser = {
             name: name,
             email: email,
@@ -151,13 +151,13 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
 
-        // Save user
+       
         users.push(newUser);
 
         localStorage.setItem("users", JSON.stringify(users));
 
 
-        // Registration Success
+       
         showMessage(
             "Account Created Successfully!",
             "Your account has been created successfully. You can now login.",

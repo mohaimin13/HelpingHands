@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaigns | HelpingHand</title>
+
+    <link rel="stylesheet" href="campaigns.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>HelpingHands</h2>
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="dashboard.html">Dashboard</a>
+
+                <a href="volunteers.html" class="management-link">
+                    Volunteers
+                </a>
+
+                <a href="donations.html">Donations</a>
+
+                <a href="campaigns.html" class="active management-link">
+                    Campaigns
+                </a>
+
+                <a href="distribution.html" class="management-link">
+                    Distribution
+                </a>
+
+                <a href="reports.html" class="management-link">
+                    Reports
+                </a>
+
+            </nav>
+
+            <button id="logoutBtn" class="logout-btn">
+                Logout
+            </button>
+
+        </aside>
+
+
+        
+        <main class="main-content">
+
+           
+            <header class="top-header">
+
+                <div>
+                    <h1>Campaigns</h1>
+                    <p id="pageDescription">
+                        Manage your donation campaigns
+                    </p>
+                </div>
+
+                <div class="user-info">
+                    <span id="userName">User</span>
+                </div>
+
+            </header>
+
+
+            
+            <section class="stats-container management-content">
+
+                <div class="stat-card">
+                    <h3>Total Campaigns</h3>
+                    <h2 id="totalCampaigns">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Active Campaigns</h3>
+                    <h2 id="activeCampaigns">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Completed Campaigns</h3>
+                    <h2 id="completedCampaigns">0</h2>
+                </div>
+
+            </section>
+
+
+            
+            <section class="campaign-section management-content">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>Campaign List</h2>
+                        <p>View and manage all campaigns</p>
+                    </div>
+
+                    <button id="addCampaignBtn">
+                        + Add Campaign
+                    </button>
+
+                </div>
+
+
+               
+                <div class="search-container">
+
+                    <input
+                        type="text"
+                        id="searchCampaign"
+                        placeholder="Search by campaign name..."
+                    >
+
+                </div>
+
+
+                <!-- Campaign Form -->
+                <div class="form-container" id="campaignFormContainer">
+
+                    <h2 id="formTitle">Add New Campaign</h2>
+
+                    <form id="campaignForm">
+
+                        <input type="hidden" id="campaignId">
+
+
+                        <div class="form-group">
+                            <label for="campaignName">
+                                Campaign Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="campaignName"
+                                placeholder="Enter campaign name"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="campaignDescription">
+                                Description
+                            </label>
+
+                            <textarea
+                                id="campaignDescription"
+                                placeholder="Enter campaign description"
+                                required
+                            ></textarea>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="startDate">
+                                Start Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="startDate"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="endDate">
+                                End Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="endDate"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="targetAmount">
+                                Target Amount (৳)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="targetAmount"
+                                placeholder="Enter target amount"
+                                min="1"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="collectedAmount">
+                                Collected Amount (৳)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="collectedAmount"
+                                placeholder="Enter collected amount"
+                                min="0"
+                                value="0"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="campaignStatus">
+                                Status
+                            </label>
+
+                            <select id="campaignStatus" required>
+
+                                <option value="Active">
+                                    Active
+                                </option>
+
+                                <option value="Completed">
+                                    Completed
+                                </option>
+
+                                <option value="Inactive">
+                                    Inactive
+                                </option>
+
+                            </select>
+                        </div>
+
+
+                        <div class="form-buttons">
+
+                            <button
+                                type="submit"
+                                id="saveCampaignBtn"
+                            >
+                                Save Campaign
+                            </button>
+
+                            <button
+                                type="button"
+                                id="cancelCampaignBtn"
+                            >
+                                Cancel
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+               
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Campaign Name</th>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                                <th>Target Amount</th>
+                                <th>Collected Amount</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="campaignTableBody">
+                          
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="campaigns.js"></script>
+
+</body>
+</html>

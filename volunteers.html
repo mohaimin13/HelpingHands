@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteers | HelpingHand</title>
+
+    <link rel="stylesheet" href="volunteers.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>HelpingHands</h2>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="volunteers.html" class="active">Volunteers</a>
+                <a href="donations.html">Donations</a>
+                <a href="campaigns.html">Campaigns</a>
+                <a href="distribution.html">Distribution</a>
+                <a href="reports.html">Reports</a>
+            </nav>
+
+            <button id="logoutBtn" class="logout-btn">
+                Logout
+            </button>
+
+        </aside>
+
+
+       
+        <main class="main-content">
+
+         
+            <header class="top-header">
+                <div>
+                    <h1>Volunteers</h1>
+                    <p>Manage your volunteers</p>
+                </div>
+
+                <div class="user-info">
+                    <span id="userName">User</span>
+                </div>
+            </header>
+
+
+        
+            <section class="stats-container">
+
+                <div class="stat-card">
+                    <h3>Total Volunteers</h3>
+                    <h2 id="totalVolunteers">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Active Volunteers</h3>
+                    <h2 id="activeVolunteers">0</h2>
+                </div>
+
+            </section>
+
+
+          
+            <section class="volunteer-section">
+
+                <div class="section-header">
+                    <div>
+                        <h2>Volunteer List</h2>
+                        <p>View and manage all volunteers</p>
+                    </div>
+
+                    <button id="addVolunteerBtn">
+                        + Add Volunteer
+                    </button>
+                </div>
+
+
+                
+                <div class="search-container">
+                    <input
+                        type="text"
+                        id="searchVolunteer"
+                        placeholder="Search by name or email..."
+                    >
+                </div>
+
+
+          
+                <div class="form-container" id="volunteerFormContainer">
+
+                    <h2 id="formTitle">Add New Volunteer</h2>
+
+                    <form id="volunteerForm">
+
+                        <input type="hidden" id="volunteerId">
+
+                        <div class="form-group">
+                            <label for="volunteerName">Full Name</label>
+                            <input
+                                type="text"
+                                id="volunteerName"
+                                placeholder="Enter full name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="volunteerEmail">Email Address</label>
+                            <input
+                                type="email"
+                                id="volunteerEmail"
+                                placeholder="Enter email address"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="volunteerPhone">Phone Number</label>
+                            <input
+                                type="tel"
+                                id="volunteerPhone"
+                                placeholder="Enter phone number"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="volunteerAddress">Address</label>
+                            <textarea
+                                id="volunteerAddress"
+                                placeholder="Enter address"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="volunteerStatus">Status</label>
+                            <select id="volunteerStatus">
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
+                            </select>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="submit" id="saveVolunteerBtn">
+                                Save Volunteer
+                            </button>
+
+                            <button type="button" id="cancelVolunteerBtn">
+                                Cancel
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+              
+                <div class="table-container">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="volunteerTableBody">
+                         
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="volunteers.js"></script>
+
+</body>
+</html>

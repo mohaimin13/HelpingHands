@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donations | HelpingHand</title>
+    <link rel="stylesheet" href="donations.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>HelpingHands</h2>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="volunteers.html" class="management-link">Volunteers</a>
+                <a href="donations.html" class="active">Donations</a>
+                <a href="campaigns.html" class="management-link">Campaigns</a>
+                <a href="distribution.html" class="management-link">Distribution</a>
+                <a href="reports.html" class="management-link">Reports</a>
+            </nav>
+
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="top-header">
+                <div>
+                    <h1>Donations</h1>
+                    <p id="pageDescription">Manage donation records</p>
+                </div>
+
+                <div class="user-info">
+                    <span id="userName">User</span>
+                    <span id="userRole"></span>
+                </div>
+            </header>
+
+            <!-- Statistics: Admin and Volunteer -->
+            <section class="stats-container" id="donationStats">
+
+                <div class="stat-card">
+                    <h3>Total Donations</h3>
+                    <h2 id="totalDonations">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Total Amount</h3>
+                    <h2 id="totalAmount">৳0</h2>
+                </div>
+
+            </section>
+
+            <section class="donation-section">
+
+                <div class="section-header">
+                    <div>
+                        <h2 id="recordsTitle">Donation Records</h2>
+                        <p id="recordsDescription">View and manage donations</p>
+                    </div>
+
+                    <button id="addDonationBtn">+ Make Donation</button>
+                </div>
+
+                <!-- Search: Admin and Volunteer -->
+                <div class="search-container" id="donationSearchContainer">
+                    <input
+                        type="text"
+                        id="searchDonation"
+                        placeholder="Search by donor name or email..."
+                    >
+                </div>
+
+                <!-- Donation Form -->
+                <div class="form-container" id="donationFormContainer">
+
+                    <h2 id="formTitle">Make a Donation</h2>
+
+                    <form id="donationForm">
+
+                        <input type="hidden" id="donationId">
+
+                        <div class="form-group">
+                            <label for="donorName">Donor Name</label>
+                            <input
+                                type="text"
+                                id="donorName"
+                                placeholder="Enter donor name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="donorEmail">Email Address</label>
+                            <input
+                                type="email"
+                                id="donorEmail"
+                                placeholder="Enter donor email"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="donationAmount">Donation Amount (৳)</label>
+                            <input
+                                type="number"
+                                id="donationAmount"
+                                placeholder="Enter donation amount"
+                                min="1"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="donationDate">Donation Date</label>
+                            <input type="date" id="donationDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="donationMethod">Payment Method</label>
+                            <select id="donationMethod" required>
+                                <option value="">Select Payment Method</option>
+                                <option value="Cash">Cash</option>
+                                <option value="bKash">bKash</option>
+                                <option value="Nagad">Nagad</option>
+                                <option value="Bank Transfer">Bank Transfer</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="donationPurpose">Donation Purpose</label>
+                            <textarea
+                                id="donationPurpose"
+                                placeholder="Enter donation purpose"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="submit" id="saveDonationBtn">
+                                Submit Donation
+                            </button>
+
+                            <button type="button" id="cancelDonationBtn">
+                                Cancel
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- Donation Table -->
+                <div class="table-container">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Donor Name</th>
+                                <th>Email</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Payment Method</th>
+                                <th>Purpose</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="donationTableBody"></tbody>
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <script src="donations.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribution | HelpingHand</title>
+    <link rel="stylesheet" href="distribution.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>HelpingHands</h2>
+            </div>
+
+            <nav class="sidebar-menu">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="volunteers.html">Volunteers</a>
+                <a href="donations.html">Donations</a>
+                <a href="campaigns.html">Campaigns</a>
+                <a href="distribution.html" class="active">Distribution</a>
+                <a href="reports.html">Reports</a>
+            </nav>
+
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </aside>
+
+
+        <main class="main-content">
+
+            <header class="top-header">
+                <div>
+                    <h1>Distribution</h1>
+                    <p>Track and manage aid distribution</p>
+                </div>
+
+                <div class="user-info">
+                    <span id="userName">User</span>
+                </div>
+            </header>
+
+
+            <section class="stats-container">
+
+                <div class="stat-card">
+                    <h3>Total Distributions</h3>
+                    <h2 id="totalDistributions">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Distributed</h3>
+                    <h2 id="completedDistributions">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Pending</h3>
+                    <h2 id="pendingDistributions">0</h2>
+                </div>
+
+            </section>
+
+
+            <section class="distribution-section">
+
+                <div class="section-header">
+                    <div>
+                        <h2>Distribution Records</h2>
+                        <p>Manage all aid distribution records</p>
+                    </div>
+
+                    <button id="addDistributionBtn">
+                        + Add Distribution
+                    </button>
+                </div>
+
+
+                <div class="search-container">
+                    <input
+                        type="text"
+                        id="searchDistribution"
+                        placeholder="Search by recipient name or item..."
+                    >
+                </div>
+
+
+                <div class="form-container" id="distributionFormContainer">
+
+                    <h2 id="formTitle">Add New Distribution</h2>
+
+                    <form id="distributionForm">
+
+                        <input type="hidden" id="distributionId">
+
+                        <div class="form-group">
+                            <label for="recipientName">Recipient Name</label>
+                            <input
+                                type="text"
+                                id="recipientName"
+                                placeholder="Enter recipient name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recipientPhone">Phone Number</label>
+                            <input
+                                type="tel"
+                                id="recipientPhone"
+                                placeholder="Enter phone number"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recipientAddress">Address</label>
+                            <textarea
+                                id="recipientAddress"
+                                placeholder="Enter recipient address"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="itemName">Item / Aid Name</label>
+                            <input
+                                type="text"
+                                id="itemName"
+                                placeholder="Example: Food Package"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="quantity">Quantity</label>
+                            <input
+                                type="number"
+                                id="quantity"
+                                min="1"
+                                placeholder="Enter quantity"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="distributionDate">Distribution Date</label>
+                            <input
+                                type="date"
+                                id="distributionDate"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="distributionStatus">Status</label>
+                            <select id="distributionStatus" required>
+                                <option value="Pending">Pending</option>
+                                <option value="Distributed">Distributed</option>
+                            </select>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="submit" id="saveDistributionBtn">
+                                Save Distribution
+                            </button>
+
+                            <button type="button" id="cancelDistributionBtn">
+                                Cancel
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Recipient</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                                <th>Item</th>
+                                <th>Quantity</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="distributionTableBody">
+                        
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <script src="distribution.js"></script>
+</body>
+</html>
